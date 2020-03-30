@@ -29,7 +29,7 @@ class BaseRecipeAttrViewSet(viewsets.GenericViewSet,
             user=self.request.user
         ).order_by('-name').distinct()
 
-        def perform_create(self, serializer):
+    def perform_create(self, serializer):
         """Create a new ingredient"""
         serializer.save(user=self.request.user)
 
