@@ -23,7 +23,8 @@ class IngredientSerializer(serializers.ModelSerializer):
 
 class RecipeSerializer(serializers.ModelSerializer):
     """Serialize a recipe"""
-    #como ingredients e tags não fazem parte, devemos fazer referência ao models
+    # como ingredients e tags não fazem parte, devemos
+    # fazer referência ao models
     ingredients = serializers.PrimaryKeyRelatedField(
         many=True,
         queryset=Ingredient.objects.all()
@@ -39,7 +40,8 @@ class RecipeSerializer(serializers.ModelSerializer):
             'id', 'title', 'ingredients', 'tags', 'time_minutes', 'price',
             'link',
         )
-        #prevenir o usuario de atualizar o id quando criar o editar as requisições
+        # prevenir o usuario de atualizar o id quando
+        # criar o editar as requisições
         read_only_fields = ('id',)
 
 
